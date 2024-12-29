@@ -1,4 +1,4 @@
-param ($rgname='TestRG2', $vnetname='VNet2', $loc='East US', $deleterg=$false)
+param ($rgname='TestRG0', $vnetname='VNet0', $loc='East US', $deleterg=$false)
 $gwname = $vnetname + 'GW'
 $gwpipname = $vnetname + 'GWPIP'
 $gwsubnetname = 'GatewaySubnet'
@@ -8,10 +8,6 @@ write-host "Creating Gateway $gwname and Public IP $gwpipname"
 write-host "Creating Gateway Subnet $gwsubnetname"
 write-host "Deleting RG at end: $deleterg"
 
-$answer = read-host "Continue: y or n? "
-if ($answer -ne 'y') {
-    exit
-}
 ## URL https://learn.microsoft.com/en-us/azure/vpn-gateway/create-gateway-basic-sku-powershell
 
 # Create a resource group
